@@ -1,0 +1,383 @@
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function tone($color, $percentage) {
+  @return mix(gray, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+$color-gen-offset: 5;
+$color-gen-power: 30;
+
+$fo4-gui-green: #1eff00;
+$fo4-gui-yellow: #ffef7f;
+$fo4-gui-red: #ff6100;
+
+$primary: $fo4-gui-green;
+$secondary: $fo4-gui-green;
+$tertiary: $fo4-gui-green;
+$light: white;
+$medium: gray;
+$dark: black;
+
+$success: $fo4-gui-green;
+$info: #88bbff;
+$warning: $fo4-gui-yellow;
+$error: $fo4-gui-red;
+
+$primary-compliment: invert($primary);
+$primary-tint-1: tint($primary, $color-gen-power * 1 + $color-gen-offset);
+$primary-tint-2: tint($primary, $color-gen-power * 2 + $color-gen-offset);
+$primary-tint-3: tint($primary, $color-gen-power * 3 + $color-gen-offset);
+$primary-tone-1: tone($primary, $color-gen-power * 1 + $color-gen-offset);
+$primary-tone-2: tone($primary, $color-gen-power * 2 + $color-gen-offset);
+$primary-tone-3: tone($primary, $color-gen-power * 3 + $color-gen-offset);
+$primary-shade-1: shade($primary, $color-gen-power * 1 + $color-gen-offset);
+$primary-shade-2: shade($primary, $color-gen-power * 2 + $color-gen-offset);
+$primary-shade-3: shade($primary, $color-gen-power * 3 + $color-gen-offset);
+
+$secondary-compliment: invert($secondary);
+$secondary-tint-1: tint($secondary, $color-gen-power * 1 + $color-gen-offset);
+$secondary-tint-2: tint($secondary, $color-gen-power * 2 + $color-gen-offset);
+$secondary-tint-3: tint($secondary, $color-gen-power * 3 + $color-gen-offset);
+$secondary-tone-1: tone($secondary, $color-gen-power * 1 + $color-gen-offset);
+$secondary-tone-2: tone($secondary, $color-gen-power * 2 + $color-gen-offset);
+$secondary-tone-3: tone($secondary, $color-gen-power * 3 + $color-gen-offset);
+$secondary-shade-1: shade($secondary, $color-gen-power * 1 + $color-gen-offset);
+$secondary-shade-2: shade($secondary, $color-gen-power * 2 + $color-gen-offset);
+$secondary-shade-3: shade($secondary, $color-gen-power * 3 + $color-gen-offset);
+
+$tertiary-compliment: invert($tertiary);
+$tertiary-tint-1: tint($tertiary, $color-gen-power * 1 + $color-gen-offset);
+$tertiary-tint-2: tint($tertiary, $color-gen-power * 2 + $color-gen-offset);
+$tertiary-tint-3: tint($tertiary, $color-gen-power * 3 + $color-gen-offset);
+$tertiary-tone-1: tone($tertiary, $color-gen-power * 1 + $color-gen-offset);
+$tertiary-tone-2: tone($tertiary, $color-gen-power * 2 + $color-gen-offset);
+$tertiary-tone-3: tone($tertiary, $color-gen-power * 3 + $color-gen-offset);
+$tertiary-shade-1: shade($tertiary, $color-gen-power * 1 + $color-gen-offset);
+$tertiary-shade-2: shade($tertiary, $color-gen-power * 2 + $color-gen-offset);
+$tertiary-shade-3: shade($tertiary, $color-gen-power * 3 + $color-gen-offset);
+
+.is-light {
+  color: $light;
+}
+
+.bg-light {
+  background-color: $light;
+}
+
+.is-medium {
+  color: $medium;
+}
+
+.bg-medium {
+  background-color: $medium;
+}
+
+.is-dark {
+  color: $dark;
+}
+
+.bg-dark {
+  background-color: $dark;
+}
+
+.is-success {
+  color: $success;
+}
+
+.is-info {
+  color: $info;
+}
+
+.is-warning {
+  color: $warning;
+}
+
+.is-error {
+  color: $error;
+}
+
+.bg-success {
+  background-color: $success;
+}
+
+.bg-info {
+  background-color: $info;
+}
+
+.bg-warning {
+  background-color: $warning;
+}
+
+.bg-error {
+  background-color: $error;
+}
+
+.is-primary {
+  color: $primary;
+}
+
+.is-primary-tint-1 {
+  color: $primary-tint-1;
+}
+
+.is-primary-tint-2 {
+  color: $primary-tint-2;
+}
+
+.is-primary-tint-3 {
+  color: $primary-tint-3;
+}
+
+.is-primary-tone-1 {
+  color: $primary-tone-1;
+}
+
+.is-primary-tone-2 {
+  color: $primary-tone-2;
+}
+
+.is-primary-tone-3 {
+  color: $primary-tone-3;
+}
+
+.is-primary-shade-1 {
+  color: $primary-shade-1;
+}
+
+.is-primary-shade-2 {
+  color: $primary-shade-2;
+}
+
+.is-primary-shade-3 {
+  color: $primary-shade-3;
+}
+
+.is-primary-compliment {
+  color: $primary-compliment;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-primary-tint-1 {
+  background-color: $primary-tint-1;
+}
+
+.bg-primary-tint-2 {
+  background-color: $primary-tint-2;
+}
+
+.bg-primary-tint-3 {
+  background-color: $primary-tint-3;
+}
+
+.bg-primary-tone-1 {
+  background-color: $primary-tone-1;
+}
+
+.bg-primary-tone-2 {
+  background-color: $primary-tone-2;
+}
+
+.bg-primary-tone-3 {
+  background-color: $primary-tone-3;
+}
+
+.bg-primary-shade-1 {
+  background-color: $primary-shade-1;
+}
+
+.bg-primary-shade-2 {
+  background-color: $primary-shade-2;
+}
+
+.bg-primary-shade-3 {
+  background-color: $primary-shade-3;
+}
+
+.bg-primary-compliment {
+  background-color: $primary-compliment;
+}
+
+.is-secondary {
+  color: $secondary;
+}
+
+.is-secondary-tint-1 {
+  color: $secondary-tint-1;
+}
+
+.is-secondary-tint-2 {
+  color: $secondary-tint-2;
+}
+
+.is-secondary-tint-3 {
+  color: $secondary-tint-3;
+}
+
+.is-secondary-tone-1 {
+  color: $secondary-tone-1;
+}
+
+.is-secondary-tone-2 {
+  color: $secondary-tone-2;
+}
+
+.is-secondary-tone-3 {
+  color: $secondary-tone-3;
+}
+
+.is-secondary-shade-1 {
+  color: $secondary-shade-1;
+}
+
+.is-secondary-shade-2 {
+  color: $secondary-shade-2;
+}
+
+.is-secondary-shade-3 {
+  color: $secondary-shade-3;
+}
+
+.is-secondary-compliment {
+  color: $secondary-compliment;
+}
+
+.bg-secondary {
+  background-color: $secondary;
+}
+
+.bg-secondary-tint-1 {
+  background-color: $secondary-tint-1;
+}
+
+.bg-secondary-tint-2 {
+  background-color: $secondary-tint-2;
+}
+
+.bg-secondary-tint-3 {
+  background-color: $secondary-tint-3;
+}
+
+.bg-secondary-tone-1 {
+  background-color: $secondary-tone-1;
+}
+
+.bg-secondary-tone-2 {
+  background-color: $secondary-tone-2;
+}
+
+.bg-secondary-tone-3 {
+  background-color: $secondary-tone-3;
+}
+
+.bg-secondary-shade-1 {
+  background-color: $secondary-shade-1;
+}
+
+.bg-secondary-shade-2 {
+  background-color: $secondary-shade-2;
+}
+
+.bg-secondary-shade-3 {
+  background-color: $secondary-shade-3;
+}
+
+.bg-secondary-compliment {
+  background-color: $secondary-compliment;
+}
+
+.is-tertiary {
+  color: $tertiary;
+}
+
+.is-tertiary-tint-1 {
+  color: $tertiary-tint-1;
+}
+
+.is-tertiary-tint-2 {
+  color: $tertiary-tint-2;
+}
+
+.is-tertiary-tint-3 {
+  color: $tertiary-tint-3;
+}
+
+.is-tertiary-tone-1 {
+  color: $tertiary-tone-1;
+}
+
+.is-tertiary-tone-2 {
+  color: $tertiary-tone-2;
+}
+
+.is-tertiary-tone-3 {
+  color: $tertiary-tone-3;
+}
+
+.is-tertiary-shade-1 {
+  color: $tertiary-shade-1;
+}
+
+.is-tertiary-shade-2 {
+  color: $tertiary-shade-2;
+}
+
+.is-tertiary-shade-3 {
+  color: $tertiary-shade-3;
+}
+
+.is-tertiary-compliment {
+  color: $tertiary-compliment;
+}
+
+.bg-tertiary {
+  background-color: $tertiary;
+}
+
+.bg-tertiary-tint-1 {
+  background-color: $tertiary-tint-1;
+}
+
+.bg-tertiary-tint-2 {
+  background-color: $tertiary-tint-2;
+}
+
+.bg-tertiary-tint-3 {
+  background-color: $tertiary-tint-3;
+}
+
+.bg-tertiary-tone-1 {
+  background-color: $tertiary-tone-1;
+}
+
+.bg-tertiary-tone-2 {
+  background-color: $tertiary-tone-2;
+}
+
+.bg-tertiary-tone-3 {
+  background-color: $tertiary-tone-3;
+}
+
+.bg-tertiary-shade-1 {
+  background-color: $tertiary-shade-1;
+}
+
+.bg-tertiary-shade-2 {
+  background-color: $tertiary-shade-2;
+}
+
+.bg-tertiary-shade-3 {
+  background-color: $tertiary-shade-3;
+}
+
+.bg-tertiary-compliment {
+  background-color: $tertiary-compliment;
+}

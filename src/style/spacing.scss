@@ -1,0 +1,104 @@
+$spacing-modifier: 10px;
+
+$spacing-1: $spacing-modifier * 1;
+$spacing-2: $spacing-modifier * 2;
+$spacing-3: $spacing-modifier * 3;
+
+.mt-1 {
+  margin-top: $spacing-1;
+}
+
+.mt-2 {
+  margin-top: $spacing-2;
+}
+
+.mt-3 {
+  margin-top: $spacing-3;
+}
+
+.mr-1 {
+  margin-right: $spacing-1;
+}
+
+.mr-2 {
+  margin-right: $spacing-2;
+}
+
+.mr-3 {
+  margin-right: $spacing-3;
+}
+
+.mb-1 {
+  margin-bottom: $spacing-1;
+}
+
+.mb-2 {
+  margin-bottom: $spacing-2;
+}
+
+.mb-3 {
+  margin-bottom: $spacing-3;
+}
+
+.ml-1 {
+  margin-left: $spacing-1;
+}
+
+.ml-2 {
+  margin-left: $spacing-2;
+}
+
+.ml-3 {
+  margin-left: $spacing-3;
+}
+
+.mx-1 {
+  @extend .ml-1;
+  @extend .mr-1;
+}
+
+.mx-2 {
+  @extend .ml-2;
+  @extend .mr-2;
+}
+
+.mx-3 {
+  @extend .ml-3;
+  @extend .mr-3;
+}
+
+.my-1 {
+  @extend .mt-1;
+  @extend .mb-1;
+}
+
+.my-2 {
+  @extend .mt-2;
+  @extend .mb-2;
+}
+
+.my-3 {
+  @extend .mt-3;
+  @extend .mb-3;
+}
+
+.m-1 {
+  @extend .mt-1;
+  @extend .mr-1;
+  @extend .mb-1;
+  @extend .ml-1;
+}
+
+.m-2 {
+  @extend .mt-2;
+  @extend .mr-2;
+  @extend .mb-2;
+  @extend .ml-2;
+}
+
+.m-3 {
+  @extend .mt-3;
+  @extend .mr-3;
+  @extend .mb-3;
+  @extend .ml-3;
+}

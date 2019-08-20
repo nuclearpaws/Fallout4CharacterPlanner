@@ -1,0 +1,410 @@
+%fo4-bg {
+  margin:0;
+  padding:0;
+  border:0;
+  width:225px;
+  height:201px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// STATS:
+
+.fo4-bg-strength {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/0.1.Strength.png");
+}
+
+.fo4-bg-perception {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/0.2.Perception.png");
+}
+
+.fo4-bg-endurance {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/0.3.Endurance.png");
+}
+
+.fo4-bg-charisma {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/0.4.Charisma.png");
+}
+
+.fo4-bg-intelligence {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/0.5.Intelligence.png");
+}
+
+.fo4-bg-agility {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/0.6.Agility.png");
+}
+
+.fo4-bg-luck {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/0.7.Luck.png");
+}
+
+// STRENGTH:
+
+.fo4-bg-ironfist {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/1.1.IronFist.png");
+}
+
+.fo4-bg-bigleagues {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/2.1.BigLeagues.png");
+}
+
+.fo4-bg-armorer {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/3.1.Armorer.png");
+}
+
+.fo4-bg-blacksmith {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/4.1.Blacksmith.png");
+}
+
+.fo4-bg-heavygunner {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/5.1.HeavyGunner.png");
+}
+
+.fo4-bg-strongback {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/6.1.StrongBack.png");
+}
+
+.fo4-bg-steadyaim {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/7.1.SteadyAim.png");
+}
+
+.fo4-bg-basher {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/8.1.Basher.png");
+}
+
+.fo4-bg-rooted {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/9.1.Rooted.png");
+}
+
+.fo4-bg-paintrain {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/10.1.PainTrain.png");
+}
+
+// PERCEPTION:
+
+.fo4-bg-pickpocket {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/1.2.PickPocket.png");
+}
+
+.fo4-bg-rifleman {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/2.2.RifleMan.png");
+}
+
+.fo4-bg-awareness {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/3.2.Awareness.png");
+}
+
+.fo4-bg-locksmith {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/4.2.Locksmith.png");
+}
+
+.fo4-bg-demolitionexpert {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/5.2.DemolitionExpert.png");
+}
+
+.fo4-bg-nightperson {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/6.2.NightPerson.png");
+}
+
+.fo4-bg-refractor {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/7.2.Refractor.png");
+}
+
+.fo4-bg-sniper {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/8.2.Sniper.png");
+}
+
+.fo4-bg-penetrator {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/9.2.Penetrator.png");
+}
+
+.fo4-bg-concentratedfire {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/10.2.ConcentratedFire.png");
+}
+
+// ENDURANCE:
+
+.fo4-bg-toughness {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/1.3.Toughness.png");
+}
+
+.fo4-bg-leadbelly {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/2.3.LeadBelly.png");
+}
+
+.fo4-bg-lifegiver {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/3.3.LifeGiver.png");
+}
+
+.fo4-bg-chemresistant {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/4.3.ChemResistant.png");
+}
+
+.fo4-bg-aquaboy {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/5.3.AquaBoy.png");
+}
+
+.fo4-bg-radresistant {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/6.3.RadResistant.png");
+}
+
+.fo4-bg-adamantiumskeleton {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/7.3.AdamantiumSkeleton.png");
+}
+
+.fo4-bg-cannibal {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/8.3.Cannibal.png");
+}
+
+.fo4-bg-ghoulish {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/9.3.Ghoulish.png");
+}
+
+.fo4-bg-solarpowered {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/10.3.SolarPowered.png");
+}
+
+// CHARISMA:
+
+.fo4-bg-capcollector {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/1.4.CapCollector.png");
+}
+
+.fo4-bg-ladykiller {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/2.4.LadyKiller.png");
+}
+
+.fo4-bg-lonewanderer {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/3.4.LoneWanderer.png");
+}
+
+.fo4-bg-attackdog {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/4.4.AttackDog.png");
+}
+
+.fo4-bg-animalfriend {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/5.4.AnimalFriend.png");
+}
+
+.fo4-bg-localleader {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/6.4.LocalLeader.png");
+}
+
+.fo4-bg-partyboy {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/7.4.PartyBoy.png");
+}
+
+.fo4-bg-inspirational {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/8.4.Inspirational.png");
+}
+
+.fo4-bg-wastelandwhisperer {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/9.4.WastelandWhisperer.png");
+}
+
+.fo4-bg-intimidation {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/10.4.Intimidation.png");
+}
+
+// INTELLIGENCE:
+
+.fo4-bg-vans {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/1.5.VANS.png");
+}
+
+.fo4-bg-medic {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/2.5.Medic.png");
+}
+
+.fo4-bg-gunnut {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/3.5.GunNut.png");
+}
+
+.fo4-bg-hacker {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/4.5.Hacker.png");
+}
+
+.fo4-bg-scrapper {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/5.5.Scrapper.png");
+}
+
+.fo4-bg-science {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/6.5.Science.png");
+}
+
+.fo4-bg-chemist {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/7.5.Chemist.png");
+}
+
+.fo4-bg-roboticsexpert {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/8.5.RoboticsExpert.png");
+}
+
+.fo4-bg-nuclearphysicist {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/9.5.NuclearPhysicist.png");
+}
+
+.fo4-bg-nerdrage {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/10.5.NerdRage.png");
+}
+
+// AGILITY:
+
+.fo4-bg-gunslinger {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/1.6.Gunslinger.png");
+}
+
+.fo4-bg-commando {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/2.6.Commando.png");
+}
+
+.fo4-bg-sneak {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/3.6.Sneak.png");
+}
+
+.fo4-bg-mrsandman {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/4.6.MrSandman.png");
+}
+
+.fo4-bg-actionboy {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/5.6.ActionBoy.png");
+}
+
+.fo4-bg-movingtarget {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/6.6.MovingTarget.png");
+}
+
+.fo4-bg-ninja {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/7.6.Ninja.png");
+}
+
+.fo4-bg-quickhands {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/8.6.QuickHands.png");
+}
+
+.fo4-bg-blitz {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/9.6.Blitz.png");
+}
+
+.fo4-bg-gunfu {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/10.6.GunFu.png");
+}
+
+// LUCK:
+
+.fo4-bg-fortunefinder {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/1.7.FortuneFinder.png");
+}
+
+.fo4-bg-scrounger {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/2.7.Scrounger.png");
+}
+
+.fo4-bg-bloodymess {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/3.7.BloodyMess.png");
+}
+
+.fo4-bg-mysteriousstranger {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/4.7.MysteriousStranger.png");
+}
+
+.fo4-bg-idiotsavant {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/5.7.IdiotSavant.png");
+}
+
+.fo4-bg-bettercriticals {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/6.7.BetterCriticals.png");
+}
+
+.fo4-bg-criticalbanker {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/7.7.CriticalBanker.png");
+}
+
+.fo4-bg-grimreaperssprint {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/8.7.GrimReapersSprint.png");
+}
+
+.fo4-bg-fourleafclover {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/9.7.FourLeafClover.png");
+}
+
+.fo4-bg-ricochet {
+  @extend %fo4-bg;
+  background-image: url("../src/assets/perkicons/10.7.Ricochet.png");
+}

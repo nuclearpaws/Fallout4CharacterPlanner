@@ -1,0 +1,32 @@
+{
+    "dlcs":[
+        {
+            "name":"Fallout 4",
+            "id":"00"
+        },
+        {
+            "name":"Automatron",
+            "id":"01"
+        },
+        {
+            "name":"Wasteland Workshop",
+            "id":"02"
+        },
+        {
+            "name":"Far Harbor",
+            "id":"03"
+        },
+        {
+            "name":"Contraptions Workshop",
+            "id":"04"
+        },
+        {
+            "name":"Vault-Tec Workshop", 
+            "id":"05"
+        },
+        {
+            "name":"Nuka-World",
+            "id":"06"
+        }
+    ]
+}

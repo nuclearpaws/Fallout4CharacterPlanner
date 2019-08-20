@@ -1,0 +1,173 @@
+{
+    "companion":[
+        {
+            "name":"Trigger Rush",
+            "ranks":[
+                {
+                    "rank":1,        
+                    "dlc":"Fallout 4",
+                    "id":"1f4187",
+                    "companion":"Cait",
+                    "description":"25% faster AP regeneration if Hit Points is below 25% of maximum"
+                }
+            ]
+        },
+        {
+            "name":"Robot Sympathy",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"1eb99b",
+                    "companion":"Codsworth",
+                    "description":"+10 Damage Resistance against energy attacks from robot enemies"
+                }
+            ]
+        },
+        {
+            "name":"Combat Medic",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"1e67bc",
+                    "companion":"Curie",
+                    "description":"+100 Hit Points if current Hit Points are below 10% of maximum"
+                }
+            ]
+        },
+        {
+            "name":"Know Your Enemy",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"08428d",
+                    "companion":"Padalin Danse",
+                    "description":"+20% damage against synths, ghouls and super mutants"
+                }
+            ]
+        },
+        {
+            "name":"Cloak & Dagger",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"08530e",
+                    "companion":"Deacon",
+                    "description":"Increased sneak attack damage by 20% and increased duration of Stealth Boy by 40%"
+                }
+            ]
+        },
+        {
+            "name":"Isodoped",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"178d57",
+                    "companion":"John Hancock",
+                    "description":"20% faster Critical Hit generation if having 250+ radiation damage"
+                }
+            ]
+        },
+        {
+            "name":"Killshot",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"178d50",
+                    "companion":"Robert Joseph MacCready",
+                    "description":"20% increased accuracy for headshots in V.A.T.S."
+                }
+            ]
+        },
+        {
+            "name":"Close to Metal",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"1e67bd",
+                    "companion":"Nick Valentine",
+                    "description":"Able to hack terminals one extra time; 50% reduction in lockout duration"
+                }
+            ]
+        },
+        {
+            "name":"Gift of Gab",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"178d54",
+                    "companion":"Piper Wrigth",
+                    "description":"+100% XP bonus for successful Charisma checks and discovering new locations"
+                }
+            ]
+        },
+        {
+            "name":"United We Stand",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"084298",
+                    "companion":"Preston Garvey",
+                    "description":"Increased Damage Resistance and output if facing three or more opponents at once"
+                }
+            ]
+        },
+        {
+            "name":"Berserk",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"084290",
+                    "companion":"Strong",
+                    "description":"20% Melee Damage if Hit Points are below 25% of maximum"
+                }
+            ]
+        },
+        {
+            "name":"Shield Harmonics",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Fallout 4",
+                    "id":"0842a0",
+                    "companion":"x6-88",
+                    "description":"+20 Energy Resistance"
+                }
+            ]
+        },
+        {
+            "name":"Hunter's Wisdom",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Far Harbor",
+                    "id":"018621",
+                    "companion":"Old Longfellow",
+                    "description":"The Damage Resistance and Energy Resistance of animals and sea creatures is reduced by 25%"
+                }
+            ]
+        },
+        {
+            "name":"Lessons in Blood",
+            "ranks":[
+                {
+                    "rank":1,
+                    "dlc":"Nuka-World",
+                    "id":"0479ef",
+                    "companion":"Porter Gage",
+                    "description":"+5% more XP per kill and +10 Damage Resistance"
+                }
+            ]
+        }
+
+    ]
+}
