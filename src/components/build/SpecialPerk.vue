@@ -37,9 +37,9 @@ export default {
     };
   },
   created() {
-    const wantedPerk = this.wantedPerks.find(wp => wp.perkName === this.perk.name);
-    if (wantedPerk) {
-      this.wantedLevelStore = wantedPerk.perkRank;
+    const buildSpecialPerk = this.buildSpecialPerks.find(bsp => bsp.perkName === this.perk.name);
+    if (buildSpecialPerk) {
+      this.wantedLevelStore = buildSpecialPerk.perkRank;
     }
   },
   watch: {
@@ -55,7 +55,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'wantedPerks',
+      'buildSpecialPerks',
     ]),
     isWanted() {
       return this.wantedLevel > 0;

@@ -9,7 +9,7 @@ Vue.config.productionTip = false;
 Vue.mixin({
   methods: {
     ...formatMixin.methods,
-  }
+  },
 });
 
 new Vue({

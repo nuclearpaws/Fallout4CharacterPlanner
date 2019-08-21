@@ -24,12 +24,13 @@ export default {
 @import './style/fonts.scss';
 @import './style/spacing.scss';
 @import './style/colors.scss';
+@import './style/default.scss';
 @import './style/perkicons.scss';
 
 * {
+  @extend .m-0;
   font-family: $font-condense;
   text-transform: uppercase;
-  margin: 0;
   padding: 0;
 }
 
