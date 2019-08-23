@@ -34,6 +34,8 @@ export default {
 
       const data = this.value.splice(index, 1);
       this.value.splice(targetIndex, 0, ...data);
+
+      this.$emit('input', this.value);
     },
   },
 };

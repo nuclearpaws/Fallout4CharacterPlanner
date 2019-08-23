@@ -19,8 +19,8 @@ import {
 export default {
   namespaced: false,
   state: {
-    name: '',
-    gender: '',
+    name: null,
+    gender: null,
     specialPerks: [],
   },
   getters: {
@@ -46,13 +46,12 @@ export default {
     },
   },
   actions: {
-    async [BUILD_RESET]({ state }) {
-      console.log('RESET!');
-      state.name = '';
-      state.gender = '';
-      state.specialPerks = [];
+    async [BUILD_RESET]({ commit }) {
+      commit(BUILD_SET_NAME, null);
+      commit(BUILD_SET_GENDER, null);
+      commit(BUILD_SET_SPECIAL_PERKS, []);
     },
-    async [BUILD_UPDATE_SPECIAL_PERK]({ state }, { name, rank }) {
+    async [BUILD_UPDATE_SPECIAL_PERK]({ state, commit }, { name, rank }) {
       const existingIndex = state.specialPerks.findIndex(d => d.name === name);
       if (existingIndex >= 0) {
         if (rank > 0) {
@@ -63,9 +62,10 @@ export default {
       } else if (rank > 0) {
         state.specialPerks.push({ name, rank });
       }
+      commit(BUILD_SET_SPECIAL_PERKS, state.specialPerks);
     },
-    async [BUILD_UPDATE_SPECIAL_PERKS_ORDER]({ state }, { specialPerks }) {
-      state.specialPerks = specialPerks;
+    async [BUILD_UPDATE_SPECIAL_PERKS_ORDER]({ commit }, { specialPerks }) {
+      commit(BUILD_SET_SPECIAL_PERKS, specialPerks);
     },
   },
 };

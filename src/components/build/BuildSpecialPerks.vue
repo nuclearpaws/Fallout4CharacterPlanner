@@ -43,11 +43,11 @@ export default {
   },
   async created() {
     if (!this.statsLoaded) {
-      this.$store.dispatch(GAMEDATA_FETCH_STATS);
+      await this.$store.dispatch(GAMEDATA_FETCH_STATS);
     }
 
     if (!this.specialPerksLoaded) {
-      this.$store.dispatch(GAMEDATA_FETCH_SPECIAL_PERKS);
+      await this.$store.dispatch(GAMEDATA_FETCH_SPECIAL_PERKS);
     }
   },
   computed: {
