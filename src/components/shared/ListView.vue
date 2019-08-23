@@ -3,8 +3,10 @@
     <ul>
       <li v-for="(item, index) in value" v-bind:key="index">
         <span>{{ textDecorator(item) }}</span>
-        <span>&nbsp;<a href="#" v-on:click="move($event, index, -1)">UP</a>&nbsp;</span>
-        <span>&nbsp;<a href="#" v-on:click="move($event, index, 1)">DOWN</a>&nbsp;</span>
+        <span>&nbsp;<a href="#" v-on:click.prevent="move(index, 0)">TOP</a>&nbsp;</span>
+        <span>&nbsp;<a href="#" v-on:click.prevent="move(index, index - 1)">UP</a>&nbsp;</span>
+        <span>&nbsp;<a href="#" v-on:click.prevent="move(index, index + 1)">DOWN</a>&nbsp;</span>
+        <span>&nbsp;<a href="#" v-on:click.prevent="move(index, value.length - 1)">BOTTOM</a>&nbsp;</span>
       </li>
     </ul>
   </div>
@@ -25,21 +27,13 @@ export default {
     },
   },
   methods: {
-    move(event, index, difference) {
-      event.preventDefault();
-
-      const newIndex = index + difference;
-
-      if (newIndex < 0 || newIndex >= this.value.length) {
+    move(index, targetIndex) {
+      if (targetIndex < 0 || targetIndex >= this.value.length) {
         return; // prevent impossible moves
       }
 
-      const temp = this.value[newIndex];
-      this.value[newIndex] = this.value[index];
-      this.value[index] = temp;
-
-      this.$emit('input', this.value);
-      this.$forceUpdate();
+      const data = this.value.splice(index, 1);
+      this.value.splice(targetIndex, 0, ...data);
     },
   },
 };
