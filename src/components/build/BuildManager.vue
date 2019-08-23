@@ -1,18 +1,19 @@
 <template>
   <div class="build-manager">
     <p>Build Manager</p>
-    <a href="#" v-on:click="reset($event)">Reset Build</a>
+    <a href="#" v-on:click.prevent="reset()">Reset Build</a>
   </div>
 </template>
 
 <script>
-import { RESET_BUILD } from '@/store/build.module';
+import {
+  BUILD_RESET,
+} from '@/store/actions.type';
 
 export default {
   methods: {
-    reset(event) {
-      event.preventDefault();
-      this.$store.dispatch(RESET_BUILD);
+    reset() {
+      this.$store.dispatch(BUILD_RESET);
     },
   },
 };

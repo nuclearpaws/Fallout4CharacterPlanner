@@ -18,6 +18,19 @@
 
 <script>
 import { mapGetters } from 'vuex';
+
+import {
+  GAMEDATA_GET_IS_STATS_LOADED,
+  GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
+  GAMEDATA_GET_STATS,
+  GAMEDATA_GET_SPECIAL_PERKS,
+} from '@/store/getters.type';
+
+import {
+  GAMEDATA_FETCH_STATS,
+  GAMEDATA_FETCH_SPECIAL_PERKS,
+} from '@/store/actions.type';
+
 import SpecialPerk from '@/components/build/SpecialPerk.vue';
 
 export default {
@@ -28,11 +41,22 @@ export default {
     return {
     };
   },
+  async created() {
+    if (!this.statsLoaded) {
+      this.$store.dispatch(GAMEDATA_FETCH_STATS);
+    }
+
+    if (!this.specialPerksLoaded) {
+      this.$store.dispatch(GAMEDATA_FETCH_SPECIAL_PERKS);
+    }
+  },
   computed: {
-    ...mapGetters([
-      'stats',
-      'specialPerks',
-    ]),
+    ...mapGetters({
+      statsLoaded: GAMEDATA_GET_IS_STATS_LOADED,
+      specialPerksLoaded: GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
+      stats: GAMEDATA_GET_STATS,
+      specialPerks: GAMEDATA_GET_SPECIAL_PERKS,
+    }),
     statValues() {
       return Array.from(new Set(this.specialPerks.map(sp => sp.stat.value).sort((a, b) => (a > b ? 0 : 1))));
     },

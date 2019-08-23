@@ -1,7 +1,7 @@
 <template>
-  <div class="custom-list-view">
+  <div class="list-view">
     <ul>
-      <li v-for="(item, index) in data" v-bind:key="index">
+      <li v-for="(item, index) in value" v-bind:key="index">
         <span>{{ textDecorator(item) }}</span>
         <span>&nbsp;<a href="#" v-on:click="move($event, index, -1)">UP</a>&nbsp;</span>
         <span>&nbsp;<a href="#" v-on:click="move($event, index, 1)">DOWN</a>&nbsp;</span>
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    data: {
+    value: {
       type: Array,
       required: true,
       default: () => [],
@@ -30,15 +30,15 @@ export default {
 
       const newIndex = index + difference;
 
-      if (newIndex < 0 || newIndex >= this.data.length) {
+      if (newIndex < 0 || newIndex >= this.value.length) {
         return; // prevent impossible moves
       }
 
-      const temp = this.data[newIndex];
-      this.data[newIndex] = this.data[index];
-      this.data[index] = temp;
+      const temp = this.value[newIndex];
+      this.value[newIndex] = this.value[index];
+      this.value[index] = temp;
 
-      this.$emit('orderChanged', this.data);
+      this.$emit('input', this.value);
       this.$forceUpdate();
     },
   },

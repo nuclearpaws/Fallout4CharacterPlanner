@@ -1,53 +1,71 @@
-export const RESET_BUILD = 'resetBuild';
-export const UPDATE_BUILD_PERK = 'updateBuildPerk';
-export const UPDATE_BUILD_PERKS_ORDER = 'updateBuildPerksOrder';
+import {
+  BUILD_GET_NAME,
+  BUILD_GET_GENDER,
+  BUILD_GET_SPECIAL_PERKS,
+} from '@/store/getters.type';
+
+import {
+  BUILD_SET_NAME,
+  BUILD_SET_GENDER,
+  BUILD_SET_SPECIAL_PERKS,
+} from '@/store/mutations.type';
+
+import {
+  BUILD_RESET,
+  BUILD_UPDATE_SPECIAL_PERK,
+  BUILD_UPDATE_SPECIAL_PERKS_ORDER,
+} from '@/store/actions.type';
 
 export default {
+  namespaced: false,
   state: {
-    buildName: '',
-    buildGender: '',
-    buildSpecialPerks: [],
+    name: '',
+    gender: '',
+    specialPerks: [],
   },
   getters: {
-    buildName(state) {
-      return state.buildName;
+    [BUILD_GET_NAME](state) {
+      return state.name;
     },
-    buildGender(state) {
-      return state.buildGender;
+    [BUILD_GET_GENDER](state) {
+      return state.gender;
     },
-    buildStats(state, getters, rootState, rootGetters) {
-      return rootGetters.stats;
-    },
-    buildSpecialPerks(state) {
-      return state.buildSpecialPerks;
-    },
-    buildSpecialPerksDetailed(state, getters, rootState, rootGetters) {
-      return getters.buildSpecialPerks.map(bsp => rootGetters.specialPerks.find(sp => sp.name === bsp.name));
+    [BUILD_GET_SPECIAL_PERKS](state) {
+      return state.specialPerks;
     },
   },
   mutations: {
+    [BUILD_SET_NAME](state, value) {
+      state.name = value;
+    },
+    [BUILD_SET_GENDER](state, value) {
+      state.gender = value;
+    },
+    [BUILD_SET_SPECIAL_PERKS](state, value) {
+      state.specialPerks = value;
+    },
   },
   actions: {
-    [RESET_BUILD]({ state }) {
+    async [BUILD_RESET]({ state }) {
       console.log('RESET!');
-      state.buildName = '';
-      state.buildGender = '';
-      state.buildSpecialPerks = [];
+      state.name = '';
+      state.gender = '';
+      state.specialPerks = [];
     },
-    [UPDATE_BUILD_PERK]({ state }, { perkName, perkRank }) {
-      const existingIndex = state.buildSpecialPerks.findIndex(bsp => bsp.perkName === perkName);
+    async [BUILD_UPDATE_SPECIAL_PERK]({ state }, { name, rank }) {
+      const existingIndex = state.specialPerks.findIndex(d => d.name === name);
       if (existingIndex >= 0) {
-        if (perkRank > 0) {
-          state.buildSpecialPerks[existingIndex].perkRank = perkRank;
+        if (rank > 0) {
+          state.specialPerks[existingIndex].rank = rank;
         } else {
-          state.buildSpecialPerks.splice(existingIndex, 1);
+          state.specialPerks.splice(existingIndex, 1);
         }
-      } else {
-        state.buildSpecialPerks.push({ perkName, perkRank });
+      } else if (rank > 0) {
+        state.specialPerks.push({ name, rank });
       }
     },
-    [UPDATE_BUILD_PERKS_ORDER]({ state }, { buildSpecialPerks }) {
-      state.buildSpecialPerks = buildSpecialPerks;
+    async [BUILD_UPDATE_SPECIAL_PERKS_ORDER]({ state }, { specialPerks }) {
+      state.specialPerks = specialPerks;
     },
   },
 };

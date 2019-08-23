@@ -1,17 +1,17 @@
 <template>
-  <div class="special-perk" v-on:click="leftClicked($event)" v-on:contextmenu="rightClick($event)">
+  <div class="special-perk" v-on:click.prevent="updateWanted(1)" v-on:contextmenu.prevent="updateWanted(-1)">
     <div class="special-perk-body">
       <div v-bind:class="[`fo4-bg-${normalizeString(perk.name)}`, isWanted ? 'special-perk-bg-highlighted' : 'special-perk-bg']">
-        <div v-bind:class="[isWanted ? wantedLevel >= maxLevel ? 'is-success' : 'is-warning' : '']">
+        <div v-bind:class="[isWanted ? wantedRank >= maxRank ? 'is-success' : 'is-warning' : '']">
           <h3>{{ perk.name }}</h3>
-          <h4>{{ wantedLevel }}</h4>
+          <h4>{{ wantedRank }}</h4>
         </div>
       </div>
     </div>
     <div class="special-perk-tooltip">
       <div v-for="rank in perk.ranks" v-bind:key="rank.rank">
-        <p v-bind:class="[isWanted ? rank.rank <= wantedLevel ? 'is-success' : 'is-error' : '']">
-          <b v-if="isWanted && rank.rank == wantedLevel">{{ rank.rank }} - {{ rank.description }}</b>
+        <p v-bind:class="[isWanted ? rank.rank <= wantedRank ? 'is-success' : 'is-error' : '']">
+          <b v-if="isWanted && rank.rank == wantedRank">{{ rank.rank }} - {{ rank.description }}</b>
           <span v-else>{{ rank.rank }} - {{ rank.description }}</span>
         </p>
         <br />
@@ -22,7 +22,14 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { UPDATE_BUILD_PERK } from '@/store/build.module';
+
+import {
+  BUILD_GET_SPECIAL_PERKS,
+} from '@/store/getters.type';
+
+import {
+  BUILD_UPDATE_SPECIAL_PERK,
+} from '@/store/actions.type';
 
 export default {
   props: {
@@ -31,53 +38,26 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      wantedLevelStore: 0,
-    };
-  },
-  created() {
-    const buildSpecialPerk = this.buildSpecialPerks.find(bsp => bsp.perkName === this.perk.name);
-    if (buildSpecialPerk) {
-      this.wantedLevelStore = buildSpecialPerk.perkRank;
-    }
-  },
-  watch: {
-    wantedLevelStore() {
-      if (this.perk) {
-        const payload = {
-          perkName: this.perk.name,
-          perkRank: this.wantedLevelStore,
-        };
-        this.$store.dispatch(UPDATE_BUILD_PERK, payload);
-      }
-    },
-  },
   computed: {
-    ...mapGetters([
-      'buildSpecialPerks',
-    ]),
-    isWanted() {
-      return this.wantedLevel > 0;
-    },
-    wantedLevel() {
-      return this.wantedLevelStore;
-    },
-    maxLevel() {
+    ...mapGetters({
+      buildSpecialPerks: BUILD_GET_SPECIAL_PERKS,
+    }),
+    maxRank() {
       return this.perk.ranks.length;
+    },
+    wantedRank() {
+      const perk = this.buildSpecialPerks.find(bsp => bsp.name === this.perk.name);
+      return perk ? perk.rank : 0;
+    },
+    isWanted() {
+      return this.wantedRank > 0;
     },
   },
   methods: {
-    leftClicked(event) {
-      event.preventDefault();
-      if (this.wantedLevelStore < this.maxLevel) {
-        this.wantedLevelStore = this.wantedLevelStore + 1;
-      }
-    },
-    rightClick(event) {
-      event.preventDefault();
-      if (this.wantedLevelStore > 0) {
-        this.wantedLevelStore = this.wantedLevelStore - 1;
+    updateWanted(change) {
+      const rank = this.wantedRank + change;
+      if (rank <= this.maxRank) {
+        this.$store.dispatch(BUILD_UPDATE_SPECIAL_PERK, { name: this.perk.name, rank });
       }
     },
   },

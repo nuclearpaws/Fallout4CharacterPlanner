@@ -1,29 +1,35 @@
 <template>
   <div class="build-special-perks-order">
     <p>Build Special Perks Order</p>
-    <CustomListView class="mx-3 my-1" v-bind:data="buildSpecialPerks" v-bind:textDecorator="buildSpecialPerk => `${buildSpecialPerk.perkName} Rank ${buildSpecialPerk.perkRank}`" v-on:orderChanged="orderChanged($event)" />
+    <ListView class="mx-3 my-1" v-bind:value="buildSpecialPerks" v-on:input="orderChanged($event)" v-bind:textDecorator="specialPerk => `${specialPerk.name} Rank ${specialPerk.rank}`" />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import CustomListView from '@/components/shared/CustomListView.vue';
-import { UPDATE_BUILD_PERKS_ORDER } from '@/store/build.module';
+
+import {
+  BUILD_GET_SPECIAL_PERKS,
+} from '@/store/getters.type';
+
+import {
+  BUILD_UPDATE_SPECIAL_PERKS_ORDER,
+} from '@/store/actions.type';
+
+import ListView from '@/components/shared/ListView.vue';
 
 export default {
   components: {
-    CustomListView,
+    ListView,
   },
   computed: {
-    ...mapGetters([
-      'buildSpecialPerks',
-      'buildSpecialPerksDetailed',
-      'buildStats',
-    ]),
+    ...mapGetters({
+      buildSpecialPerks: BUILD_GET_SPECIAL_PERKS,
+    }),
   },
   methods: {
     orderChanged(event) {
-      this.$store.dispatch(UPDATE_BUILD_PERKS_ORDER, { buildSpecialPerks: event });
+      this.$store.dispatch(BUILD_UPDATE_SPECIAL_PERKS_ORDER, { specialPerks: event });
     },
   },
 };

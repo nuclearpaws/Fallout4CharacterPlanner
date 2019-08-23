@@ -17,7 +17,7 @@
                 {
                     "rank":2,
                     "dlc":"Fallout 4",
-                    "id":"01daff", 
+                    "id":"01daff",
                     "level":9,
                     "description":"Punching attacks now do 40% more damage and can disarm your opponent."
                 },
@@ -165,7 +165,7 @@
                 {
                     "rank":1,
                     "dlc":"Fallout 4",
-                    "id":"04a0d6", 
+                    "id":"04a0d6",
                     "level":1,
                     "description":"Thanks to practice and conditioning, heavy guns do 20% more damage."
                 },
@@ -184,7 +184,7 @@
                     "description":"Heavy guns now do 60% more damage. Hip fire accuracy is increased even more."
                 },
                 {
-                    "rank":4, 
+                    "rank":4,
                     "dlc":"Fallout 4",
                     "id":"065e2a",
                     "level":35,
@@ -1322,7 +1322,7 @@
         {
             "name":"Inspirational",
             "stat":{
-                "name":"Charisma", 
+                "name":"Charisma",
                 "value":8
             },
             "ranks":[
@@ -1574,7 +1574,7 @@
             ]
         },
         {
-            "name":"Science!", 
+            "name":"Science!",
             "stat":{
                 "name":"Intelligence",
                 "value":6
@@ -1870,9 +1870,9 @@
             ]
         },
         {
-            "name":"Mr Sandman", 
+            "name":"Mr Sandman",
             "stat":{
-                "name":"Agility", 
+                "name":"Agility",
                 "value":4
             },
             "ranks":[
@@ -1930,7 +1930,7 @@
             ]
         },
         {
-            "name":"Action Girl", 
+            "name":"Action Girl",
             "stat":{
                 "name":"Agility",
                 "value":5
@@ -1962,7 +1962,7 @@
         {
             "name":"Moving Target",
             "stat":{
-                "name":"Agility", 
+                "name":"Agility",
                 "value":6
             },
             "ranks":[
@@ -1990,9 +1990,9 @@
             ]
         },
         {
-            "name":"Ninja", 
+            "name":"Ninja",
             "stat":{
-                "name":"Agility", 
+                "name":"Agility",
                 "value":7
             },
             "ranks":[
@@ -2020,9 +2020,9 @@
             ]
         },
         {
-            "name":"Quick Hands", 
+            "name":"Quick Hands",
             "stat":{
-                "name":"Agility", 
+                "name":"Agility",
                 "value":8
             },
             "ranks":[
@@ -2052,7 +2052,7 @@
         {
             "name":"Blitz",
             "stat":{
-                "name":"Agility", 
+                "name":"Agility",
                 "value":9
             },
             "ranks":[
@@ -2103,7 +2103,7 @@
             ]
         },
         {
-            "name":"Fortune Finder", 
+            "name":"Fortune Finder",
             "stat":{
                 "name":"Luck",
                 "value":1
@@ -2177,7 +2177,7 @@
             ]
         },
         {
-            "name":"Bloody Mess", 
+            "name":"Bloody Mess",
             "stat":{
                 "name":"Luck",
                 "value":3
@@ -2313,7 +2313,7 @@
         {
             "name":"Critical Banker",
             "stat":{
-                "name":"Luck", 
+                "name":"Luck",
                 "value":7
             },
             "ranks":[
@@ -2348,9 +2348,9 @@
             ]
         },
         {
-            "name":"Grim Reaper's Sprint", 
+            "name":"Grim Reaper's Sprint",
             "stat":{
-                "name":"Luck", 
+                "name":"Luck",
                 "value":8
             },
             "ranks":[
@@ -2380,7 +2380,7 @@
         {
             "name":"Four Leaf Clover",
             "stat":{
-                "name":"Luck", 
+                "name":"Luck",
                 "value":9
             },
             "ranks":[
@@ -2417,7 +2417,7 @@
         {
             "name":"Ricochet",
             "stat":{
-                "name":"Luck", 
+                "name":"Luck",
                 "value":10
             },
             "ranks":[
