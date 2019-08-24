@@ -3,7 +3,7 @@
     <h2>Build Special Perks</h2>
     <table>
       <thead>
-        <th v-for="stat in stats" v-bind:key="stat">{{ stat }}</th>
+        <th v-for="stat in stats" v-bind:key="stat"><h3>{{ stat }}</h3></th>
       </thead>
       <tbody>
         <tr v-for="statValue in statValues" v-bind:key="statValue">
@@ -36,10 +36,6 @@ import SpecialPerk from '@/components/build/SpecialPerk.vue';
 export default {
   components: {
     SpecialPerk,
-  },
-  data() {
-    return {
-    };
   },
   async created() {
     if (!this.statsLoaded) {

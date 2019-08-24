@@ -1,5 +1,5 @@
 <template>
-  <select class="data-driven-select" v-model="valueModel">
+  <select class="custom-select" v-model="valueModel">
     <option v-bind:value="null" v-bind:disabled="!allowNull" selected="true">{{ placeholder }}</option>
     <option v-for="(option, index) in data" v-bind:key="index" v-bind:value="valueMapper(option)">{{ textDecorated(option) }}</option>
   </select>

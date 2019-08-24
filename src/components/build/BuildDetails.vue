@@ -2,7 +2,7 @@
   <div class="build-details">
     <h2>Build Details</h2>
     <input type="text" placeholder="Character Name..." v-model="buildName">
-    <DataDrivenSelect v-bind:data="genders" v-model="buldGender" />
+    <c-select v-bind:data="genders" v-model="buldGender" />
   </div>
 </template>
 
@@ -25,12 +25,7 @@ import {
   GAMEDATA_FETCH_GENDERS,
 } from '@/store/actions.type';
 
-import DataDrivenSelect from '@/components/shared/DataDrivenSelect.vue';
-
 export default {
-  components: {
-    DataDrivenSelect,
-  },
   async created() {
     if (!this.gendersLoaded) {
       await this.$store.dispatch(GAMEDATA_FETCH_GENDERS);
