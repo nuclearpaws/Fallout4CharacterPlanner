@@ -13,6 +13,15 @@ export default {
   async getStats() {
     return Stats.stats;
   },
+  async getMinimumStatValue() {
+    return Stats.minimumStatValue;
+  },
+  async getMaximumStatValue() {
+    return Stats.maximumStatValue;
+  },
+  async getInitialStatPoints() {
+    return Stats.initialStatPoints;
+  },
   async getSpecialPerks() {
     return SpecialPerks.special;
   },

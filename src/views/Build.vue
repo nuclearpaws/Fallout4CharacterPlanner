@@ -4,27 +4,31 @@
     <hr />
     <BuildManager />
     <hr />
-    <BuildDetails />
+    <BuildCharacter />
     <hr />
     <BuildSpecialPerks />
     <hr />
     <BuildSpecialPerksOrder />
+    <hr />
+    <BuildStats />
     <hr />
   </div>
 </template>
 
 <script>
 import BuildManager from '@/components/build/BuildManager.vue';
-import BuildDetails from '@/components/build/BuildDetails.vue';
+import BuildCharacter from '@/components/build/BuildCharacter.vue';
 import BuildSpecialPerks from '@/components/build/BuildSpecialPerks.vue';
 import BuildSpecialPerksOrder from '@/components/build/BuildSpecialPerksOrder.vue';
+import BuildStats from '@/components/build/BuildStats.vue';
 
 export default {
   components: {
     BuildManager,
-    BuildDetails,
+    BuildCharacter,
     BuildSpecialPerks,
     BuildSpecialPerksOrder,
+    BuildStats,
   },
 };
 </script>

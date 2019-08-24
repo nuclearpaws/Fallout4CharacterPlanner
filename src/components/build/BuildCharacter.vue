@@ -1,6 +1,6 @@
 <template>
-  <div class="build-details">
-    <h2>Build Details</h2>
+  <div class="build-character">
+    <h2>Build Character</h2>
     <input type="text" placeholder="Character Name..." v-model="buildName">
     <c-select v-bind:data="genders" v-model="buldGender" />
   </div>

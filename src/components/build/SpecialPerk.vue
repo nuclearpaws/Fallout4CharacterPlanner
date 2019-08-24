@@ -46,7 +46,7 @@ export default {
       return this.perk.ranks.length;
     },
     wantedRank() {
-      const perk = this.buildSpecialPerks.find(bsp => bsp.name === this.perk.name);
+      const perk = this.buildSpecialPerks.find(bsp => bsp.perk.name === this.perk.name);
       return perk ? perk.rank : 0;
     },
     isWanted() {
@@ -57,7 +57,7 @@ export default {
     updateWanted(change) {
       const rank = this.wantedRank + change;
       if (rank <= this.maxRank) {
-        this.$store.dispatch(BUILD_UPDATE_SPECIAL_PERK, { name: this.perk.name, rank });
+        this.$store.dispatch(BUILD_UPDATE_SPECIAL_PERK, { perk: this.perk, rank });
       }
     },
   },

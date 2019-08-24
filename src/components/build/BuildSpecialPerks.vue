@@ -20,14 +20,14 @@
 import { mapGetters } from 'vuex';
 
 import {
-  GAMEDATA_GET_IS_STATS_LOADED,
+  GAMEDATA_GET_IS_STATS_DATA_LOADED,
   GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
   GAMEDATA_GET_STATS,
   GAMEDATA_GET_SPECIAL_PERKS,
 } from '@/store/getters.type';
 
 import {
-  GAMEDATA_FETCH_STATS,
+  GAMEDATA_FETCH_STATS_DATA,
   GAMEDATA_FETCH_SPECIAL_PERKS,
 } from '@/store/actions.type';
 
@@ -39,7 +39,7 @@ export default {
   },
   async created() {
     if (!this.statsLoaded) {
-      await this.$store.dispatch(GAMEDATA_FETCH_STATS);
+      await this.$store.dispatch(GAMEDATA_FETCH_STATS_DATA);
     }
 
     if (!this.specialPerksLoaded) {
@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      statsLoaded: GAMEDATA_GET_IS_STATS_LOADED,
+      statsLoaded: GAMEDATA_GET_IS_STATS_DATA_LOADED,
       specialPerksLoaded: GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
       stats: GAMEDATA_GET_STATS,
       specialPerks: GAMEDATA_GET_SPECIAL_PERKS,
