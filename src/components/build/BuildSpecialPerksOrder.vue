@@ -1,6 +1,6 @@
 <template>
   <div class="build-special-perks-order">
-    <p>Build Special Perks Order</p>
+    <h2>Build Special Perks Order</h2>
     <ListView class="mx-3 my-1" v-bind:value="buildSpecialPerks" v-on:input="orderChanged($event)" v-bind:textDecorator="specialPerk => `${specialPerk.name} Rank ${specialPerk.rank}`" />
   </div>
 </template>

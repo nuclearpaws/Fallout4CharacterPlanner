@@ -1,6 +1,6 @@
 <template>
   <div class="build-perks">
-    <p>Build Perks</p>
+    <h2>Build Special Perks</h2>
     <table>
       <thead>
         <th v-for="stat in stats" v-bind:key="stat">{{ stat }}</th>

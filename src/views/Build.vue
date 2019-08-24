@@ -1,10 +1,15 @@
 <template>
   <div id="build">
     <h1>Build</h1>
+    <hr />
     <BuildManager />
+    <hr />
     <BuildDetails />
+    <hr />
     <BuildSpecialPerks />
+    <hr />
     <BuildSpecialPerksOrder />
+    <hr />
   </div>
 </template>
 

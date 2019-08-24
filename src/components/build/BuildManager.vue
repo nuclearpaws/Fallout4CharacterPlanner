@@ -1,6 +1,6 @@
 <template>
   <div class="build-manager">
-    <p>Build Manager</p>
+    <h2>Build Manager</h2>
     <a href="#" v-on:click.prevent="reset()">Reset Build</a>
   </div>
 </template>

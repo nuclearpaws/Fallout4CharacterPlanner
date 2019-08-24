@@ -1,6 +1,6 @@
 <template>
   <div class="build-details">
-    <p>Build Details</p>
+    <h2>Build Details</h2>
     <input type="text" placeholder="Character Name..." v-model="buildName">
     <DataDrivenSelect v-bind:data="genders" v-model="buldGender" />
   </div>
