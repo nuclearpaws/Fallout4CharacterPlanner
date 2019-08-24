@@ -12,6 +12,8 @@
     <hr />
     <BuildStats />
     <hr />
+    <BuildLevelGuide />
+    <hr />
   </div>
 </template>
 
@@ -21,6 +23,7 @@ import BuildCharacter from '@/components/build/BuildCharacter.vue';
 import BuildSpecialPerks from '@/components/build/BuildSpecialPerks.vue';
 import BuildSpecialPerksOrder from '@/components/build/BuildSpecialPerksOrder.vue';
 import BuildStats from '@/components/build/BuildStats.vue';
+import BuildLevelGuide from '@/components/build/BuildLevelGuide.vue';
 
 export default {
   components: {
@@ -29,6 +32,7 @@ export default {
     BuildSpecialPerks,
     BuildSpecialPerksOrder,
     BuildStats,
+    BuildLevelGuide,
   },
 };
 </script>

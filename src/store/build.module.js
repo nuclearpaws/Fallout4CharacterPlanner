@@ -4,6 +4,7 @@ import {
   BUILD_GET_SPECIAL_PERKS,
   BUILD_GET_REQUIRED_STATS,
   BUILD_GET_TOTAL_REQUIRED_STAT_POINTS,
+  BUILD_GET_LEVEL_GUIDE,
   GAMEDATA_GET_STATS,
   GAMEDATA_GET_MINIMUM_STAT_VALUE,
 } from '@/store/getters.type';
@@ -52,6 +53,37 @@ export default {
     [BUILD_GET_TOTAL_REQUIRED_STAT_POINTS](state, getters, baseState, baseGetters) {
       const minimumStatValue = baseGetters[GAMEDATA_GET_MINIMUM_STAT_VALUE];
       return getters[BUILD_GET_REQUIRED_STATS].map(s => s.value).reduce((t, c) => (t + c), baseGetters[GAMEDATA_GET_STATS].reduce(t => t - minimumStatValue, 0));
+    },
+    [BUILD_GET_LEVEL_GUIDE](state) {
+      const perkOrder = [];
+      state.specialPerks.forEach(p => p.perk.ranks.filter(r => r.rank <= p.rank).forEach((r) => {
+        let late = 0;
+        let level = r.level;
+        while (perkOrder.map(g => g.level).includes(level)) {
+          level += 1;
+          late += 1;
+        }
+
+        perkOrder.push({
+          level,
+          name: p.perk.name,
+          rank: r.rank,
+          late,
+        });
+      }));
+      const buildGuide = [];
+      for (let i = 1; i <= Math.max(...perkOrder.map(p => p.level)); i += 1) {
+        const perk = perkOrder.find(p => p.level === i);
+        buildGuide.push(perk ? perk : {
+          level: i,
+          name: '--',
+          rank: null,
+          late: null,
+        });
+      }
+
+      buildGuide.sort((a, b) => (a.level - b.level));
+      return buildGuide;
     },
   },
   mutations: {

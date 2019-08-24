@@ -15,3 +15,4 @@ export const BUILD_GET_GENDER = 'build/getGender';
 export const BUILD_GET_SPECIAL_PERKS = 'build/getSpecialPerks';
 export const BUILD_GET_REQUIRED_STATS = 'build/getRequiredStats';
 export const BUILD_GET_TOTAL_REQUIRED_STAT_POINTS = 'build/getTotalRequiredStatPoints';
+export const BUILD_GET_LEVEL_GUIDE = 'build/getLevelGuide';
