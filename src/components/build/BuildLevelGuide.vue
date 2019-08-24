@@ -22,17 +22,19 @@ export default {
   },
   methods: {
     getStepText(step) {
-      const prefix = `${step.level}: ${step.name} ${step.rank}`;
-      if (step.rank === 1) {
+      const prefix = `${step.level}: ${step.name}`;
+      if (!step.rank) {
         return prefix;
+      } else if (step.rank === 1) {
+        return `${prefix} ${step.rank}`;
       } else if (step.late > 0) {
         if (step.late > 1) {
-          return `${prefix} (${step.late} Levels Late)`
+          return `${prefix} ${step.rank} (${step.late} Levels Late)`
         } else {
-          return `${prefix} (${step.late} Level Late)`
+          return `${prefix} ${step.rank} (${step.late} Level Late)`
         }
       } else {
-        return prefix;
+        return `${prefix} ${step.rank}`;
       }
     }
   },

@@ -17,6 +17,8 @@ import {
 
 import {
   BUILD_RESET,
+  BUILD_SAVE,
+  BUILD_LOAD,
   BUILD_UPDATE_SPECIAL_PERK,
   BUILD_UPDATE_SPECIAL_PERKS_ORDER,
 } from '@/store/actions.type';
@@ -102,6 +104,19 @@ export default {
       commit(BUILD_SET_NAME, null);
       commit(BUILD_SET_GENDER, null);
       commit(BUILD_SET_SPECIAL_PERKS, []);
+    },
+    async [BUILD_SAVE]({ state }) {
+      const buildData = {
+        name: state.name,
+        gender: state.gender,
+        specialPerks: state.specialPerks,
+      };
+
+      console.log(JSON.stringify(buildData));
+    },
+    async [BUILD_LOAD]({ commit }, payload) {
+      console.log(commit);
+      console.log(payload);
     },
     async [BUILD_UPDATE_SPECIAL_PERK]({ state, commit }, { perk, rank }) {
       const existingIndex = state.specialPerks.findIndex(d => d.perk.name === perk.name);
