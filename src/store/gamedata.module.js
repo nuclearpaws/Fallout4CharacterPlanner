@@ -7,10 +7,7 @@ import {
   GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
   GAMEDATA_GET_RECOGNISED_NAMES,
   GAMEDATA_GET_GENDERS,
-  GAMEDATA_GET_STATS,
-  GAMEDATA_GET_MINIMUM_STAT_VALUE,
-  GAMEDATA_GET_MAXIMUM_STAT_VALUE,
-  GAMEDATA_GET_INITIAL_STAT_POINTS,
+  GAMEDATA_GET_STATS_DATA,
   GAMEDATA_GET_SPECIAL_PERKS,
 } from '@/store/getters.type';
 
@@ -21,10 +18,7 @@ import {
   GAMEDATA_SET_IS_SPECIAL_PERKS_LOADED,
   GAMEDATA_SET_RECOGNISED_NAMES,
   GAMEDATA_SET_GENDERS,
-  GAMEDATA_SET_STATS,
-  GAMEDATA_SET_MINIMUM_STAT_VALUE,
-  GAMEDATA_SET_MAXIMUM_STAT_VALUE,
-  GAMEDATA_SET_INITIAL_STAT_POINTS,
+  GAMEDATA_SET_STATS_DATA,
   GAMEDATA_SET_SPECIAL_PERKS,
 } from '@/store/mutations.type';
 
@@ -43,11 +37,13 @@ export default {
     isSpecialPerksLoaded: false,
     recognisedNames: [],
     genders: [],
-    stats: [],
+    statsData: {
+      stats: [],
+      minimumStatValue: 0,
+      maximumStatValue: 0,
+      initialStatPoints: 0,
+    },
     specialPerks: [],
-    minimumStatValue: 0,
-    maximumStatValue: 0,
-    initialStatPoints: 0,
   },
   getters: {
     [GAMEDATA_GET_IS_RECOGNISED_NAMES_LOADED](state) {
@@ -68,20 +64,11 @@ export default {
     [GAMEDATA_GET_GENDERS](state) {
       return state.genders;
     },
-    [GAMEDATA_GET_STATS](state) {
-      return state.stats;
-    },
-    [GAMEDATA_GET_MINIMUM_STAT_VALUE](state) {
-      return state.minimumStatValue;
-    },
-    [GAMEDATA_GET_MAXIMUM_STAT_VALUE](state) {
-      return state.maximumStatValue;
+    [GAMEDATA_GET_STATS_DATA](state) {
+      return state.statsData;
     },
     [GAMEDATA_GET_SPECIAL_PERKS](state) {
       return state.specialPerks;
-    },
-    [GAMEDATA_GET_INITIAL_STAT_POINTS](state) {
-      return state.initialStatPoints;
     },
   },
   mutations: {
@@ -103,17 +90,8 @@ export default {
     [GAMEDATA_SET_GENDERS](state, value) {
       state.genders = value;
     },
-    [GAMEDATA_SET_STATS](state, value) {
-      state.stats = value;
-    },
-    [GAMEDATA_SET_MINIMUM_STAT_VALUE](state, value) {
-      state.minimumStatValue = value;
-    },
-    [GAMEDATA_SET_MAXIMUM_STAT_VALUE](state, value) {
-      state.maximumStatValue = value;
-    },
-    [GAMEDATA_SET_INITIAL_STAT_POINTS](state, value) {
-      state.initialStatPoints = value;
+    [GAMEDATA_SET_STATS_DATA](state, value) {
+      state.statsData = value;
     },
     [GAMEDATA_SET_SPECIAL_PERKS](state, value) {
       state.specialPerks = value;
@@ -131,14 +109,8 @@ export default {
       commit(GAMEDATA_SET_IS_GENDERS_LOADED, true);
     },
     async [GAMEDATA_FETCH_STATS_DATA]({ commit }) {
-      const stats = await GameDataProvider.getStats();
-      const minimumStatValue = await GameDataProvider.getMinimumStatValue();
-      const maximumStatValue = await GameDataProvider.getMaximumStatValue();
-      const initialStatPoints = await GameDataProvider.getInitialStatPoints();
-      commit(GAMEDATA_SET_STATS, stats);
-      commit(GAMEDATA_SET_MINIMUM_STAT_VALUE, minimumStatValue);
-      commit(GAMEDATA_SET_MAXIMUM_STAT_VALUE, maximumStatValue);
-      commit(GAMEDATA_SET_INITIAL_STAT_POINTS, initialStatPoints);
+      const statsData = await GameDataProvider.getStatsData();
+      commit(GAMEDATA_SET_STATS_DATA, statsData);
       commit(GAMEDATA_SET_IS_STATS_DATA_LOADED, true);
     },
     async [GAMEDATA_FETCH_SPECIAL_PERKS]({ commit }) {

@@ -3,11 +3,11 @@
     <h2>Build Special Perks</h2>
     <table>
       <thead>
-        <th v-for="stat in stats" v-bind:key="stat"><h3>{{ stat }}</h3></th>
+        <th v-for="stat in statsData.stats" v-bind:key="stat"><h3>{{ stat }}</h3></th>
       </thead>
       <tbody>
         <tr v-for="statValue in statValues" v-bind:key="statValue">
-          <td v-for="stat in stats" v-bind:key="stat">
+          <td v-for="stat in statsData.stats" v-bind:key="stat">
             <SpecialPerk v-bind:perk="getStatPerk(stat, statValue)" />
           </td>
         </tr>
@@ -22,7 +22,7 @@ import { mapGetters } from 'vuex';
 import {
   GAMEDATA_GET_IS_STATS_DATA_LOADED,
   GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
-  GAMEDATA_GET_STATS,
+  GAMEDATA_GET_STATS_DATA,
   GAMEDATA_GET_SPECIAL_PERKS,
 } from '@/store/getters.type';
 
@@ -50,7 +50,7 @@ export default {
     ...mapGetters({
       statsLoaded: GAMEDATA_GET_IS_STATS_DATA_LOADED,
       specialPerksLoaded: GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
-      stats: GAMEDATA_GET_STATS,
+      statsData: GAMEDATA_GET_STATS_DATA,
       specialPerks: GAMEDATA_GET_SPECIAL_PERKS,
     }),
     statValues() {

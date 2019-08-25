@@ -13,9 +13,8 @@ import { mapGetters } from 'vuex';
 
 import {
   GAMEDATA_GET_IS_STATS_DATA_LOADED,
-  GAMEDATA_GET_INITIAL_STAT_POINTS,
-  BUILD_GET_REQUIRED_STATS,
-  BUILD_GET_TOTAL_REQUIRED_STAT_POINTS,
+  GAMEDATA_GET_STATS_DATA,
+  BUILD_GET_SPECIAL_PERKS,
 } from '@/store/getters.type';
 
 import {
@@ -31,10 +30,28 @@ export default {
   computed: {
     ...mapGetters({
       statsDataLoaded: GAMEDATA_GET_IS_STATS_DATA_LOADED,
-      initialStatPoints: GAMEDATA_GET_INITIAL_STAT_POINTS,
-      requiredStats: BUILD_GET_REQUIRED_STATS,
-      totalRequiredStatPoints: BUILD_GET_TOTAL_REQUIRED_STAT_POINTS,
+      statsData: GAMEDATA_GET_STATS_DATA,
+      specialPerks: BUILD_GET_SPECIAL_PERKS,
     }),
+    requiredStats() {
+      return this.statsData.stats.map((s) => {
+        let value = Math.max(...this.specialPerks.filter(p => p.perk.stat.name === s).map(p => p.perk.stat.value));
+        if (value <= 0) {
+          value = this.statsData.minimumStatValue;
+        }
+        return {
+          name: s,
+          value,
+        };
+      });
+    },
+    initialStatPoints() {
+      return this.statsData.initialStatPoints;
+    },
+    totalRequiredStatPoints() {
+      const { minimumStatValue } = this.statsData;
+      return this.requiredStats.map(s => s.value).reduce((t, c) => (t + c), this.statsData.stats.reduce(t => t - minimumStatValue, 0));
+    },
   },
 };
 </script>

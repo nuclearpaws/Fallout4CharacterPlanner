@@ -10,17 +10,8 @@ export default {
   async getGenders() {
     return Genders.genders;
   },
-  async getStats() {
-    return Stats.stats;
-  },
-  async getMinimumStatValue() {
-    return Stats.minimumStatValue;
-  },
-  async getMaximumStatValue() {
-    return Stats.maximumStatValue;
-  },
-  async getInitialStatPoints() {
-    return Stats.initialStatPoints;
+  async getStatsData() {
+    return Stats;
   },
   async getSpecialPerks() {
     return SpecialPerks.special;
