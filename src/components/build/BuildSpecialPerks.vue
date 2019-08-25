@@ -13,6 +13,7 @@
         </tr>
       </tbody>
     </table>
+    <p>Perks Taken: <b v-bind:class="[totalPerkCount >= dangerPerkCount ? 'is-error' : totalPerkCount >= warningPerkCount ? 'is-warning' : totalPerkCount >= successPerkCount ? 'is-success' : '']">{{ totalPerkCount }} / {{ dangerPerkCount }}</b></p>
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import {
   GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
   GAMEDATA_GET_STATS_DATA,
   GAMEDATA_GET_SPECIAL_PERKS,
+  BUILD_GET_SPECIAL_PERKS,
 } from '@/store/getters.type';
 
 import {
@@ -36,6 +38,13 @@ import SpecialPerk from '@/components/build/SpecialPerk.vue';
 export default {
   components: {
     SpecialPerk,
+  },
+  data() {
+    return {
+      successPerkCount: 1,
+      warningPerkCount: 30,
+      dangerPerkCount: 50,
+    };
   },
   async created() {
     if (!this.statsLoaded) {
@@ -52,9 +61,13 @@ export default {
       specialPerksLoaded: GAMEDATA_GET_IS_SPECIAL_PERKS_LOADED,
       statsData: GAMEDATA_GET_STATS_DATA,
       specialPerks: GAMEDATA_GET_SPECIAL_PERKS,
+      wantedPerks: BUILD_GET_SPECIAL_PERKS,
     }),
     statValues() {
       return Array.from(new Set(this.specialPerks.map(sp => sp.stat.value).sort((a, b) => (a > b ? 0 : 1))));
+    },
+    totalPerkCount() {
+      return this.wantedPerks.map(wp => wp.perk.ranks.filter(r => r.rank <= wp.rank)).reduce((t, c) => (t.concat(...c)), []).length;
     },
   },
   methods: {
